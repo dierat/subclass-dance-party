@@ -20,13 +20,7 @@ var Dancer = function(top, left, timeBetweenSteps){
     this.$node.css(styleSettings);
   };
 
-  
-  this.step = function(){
-    // the basic dancer doesn't do anything interesting at all on each step,
-    // it just schedules the next step
-    setTimeout(this.step.bind(this), timeBetweenSteps);
-
-
+  this.getMoveString = function(){
     var moveTop = Math.floor(Math.random() * 30) - 15;
     var moveLeft = Math.floor(Math.random() * 30) - 15;
     var top = this.$node.css('top');
@@ -34,8 +28,19 @@ var Dancer = function(top, left, timeBetweenSteps){
     var left = this.$node.css('left');
     left = +left.slice(0, left.length - 2) + moveLeft;
 
+    return 'translateX(' + moveLeft + 'px) translateY(' + moveTop + 'px)';
+  };
+
+  
+  this.step = function(transformString){
+    // the basic dancer doesn't do anything interesting at all on each step,
+    // it just schedules the next step
+    setTimeout(this.step.bind(this), timeBetweenSteps);
+
+    var moveString = this.getMoveString();
+
     var styleSettings = {
-      'transform': 'translateX(' + moveLeft + 'px) translateY(' + moveTop + 'px)'
+      'transform': moveString
     };
     this.$node.css(styleSettings);
   };
