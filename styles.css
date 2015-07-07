@@ -3,13 +3,14 @@ body, html{
 }
 body{
   margin: 0px;
-  
+  background-color: #160845;
   background-image: url("eye.jpg");
   background-size: 100%;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: red;
+  text-decoration: none;
 }
 .title, .addDancerButton{
   padding:5px 12px;
@@ -17,10 +18,11 @@ body, a:link, a:visited, a:active{
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: #160845;
 }
 .title{
-  background-color: #777;
+  background-color: red;
+  color: #160845;
 }
 .dancer{
   border:10px solid red;
