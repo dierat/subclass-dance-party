@@ -2,7 +2,6 @@ var RandomColoredBlinkyDancer = function(top, left, delay){
   RandomColoredDancer.call(this, top, left, delay);
 
   this.oldStep = this.step;
-
   this.step = function(){
     // call the old version of step at the beginning of any call to this new version of step
     this.oldStep();
