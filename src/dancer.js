@@ -39,6 +39,10 @@ var Dancer = function(top, left, timeBetweenSteps){
 
     var moveString = this.getMoveString();
 
+    if (transformString){
+      moveString = moveString + ' ' + transformString;
+    }
+
     var styleSettings = {
       'transform': moveString
     };
