@@ -3,7 +3,11 @@ var Dancer = function(top, left, timeBetweenSteps){
 
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
-  
+
+  var styleSettings = {
+    'transition': 'all ' + (timeBetweenSteps / 1000) + 's'
+  };
+  this.$node.css(styleSettings);
 
   this.setPosition = function(top, left){
     // Use css top and left properties to position our <span> tag
@@ -30,7 +34,10 @@ var Dancer = function(top, left, timeBetweenSteps){
     var left = this.$node.css('left');
     left = +left.slice(0, left.length - 2) + moveLeft;
 
-    this.setPosition(top, left);
+    var styleSettings = {
+      'transform': 'translateX(' + moveLeft + 'px) translateY(' + moveTop + 'px)'
+    };
+    this.$node.css(styleSettings);
   };
   this.step();
 
