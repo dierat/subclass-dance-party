@@ -20,6 +20,7 @@ var RandomColoredBlinkyDancer = function(top, left, delay){
     // See http://api.jquery.com/category/effects/ for this and
     // other effects you can use on a jQuery-wrapped html tag.
     this.setColor();
+    this.$node.toggle();
   };
 }
 
