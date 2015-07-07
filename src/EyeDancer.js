@@ -1,18 +1,20 @@
 var EyeDancer = function(top, left, delay){
   Dancer.call(this, top, left, delay);
 
-  // Use css to set the background. See http://api.jquery.com/css/
+  var width = Math.floor(Math.random() * 100) + 20;
+  var height = width * 0.68;
+
   var styleSettings = {
-    'width': '100px',
-    'height': '68px',
+    'width': width,
+    'height': height,
     'border': 'none',
     'background-image': "url('eye.png')",
-    'background-size': 100
+    'background-size': '100%'
   };
   this.$node.css(styleSettings);
 
   this.getRotateString = function(){
-    var rotate = Math.floor((Math.random() * 360) - 150);
+    var rotate = Math.floor((Math.random() * 200) - 100);
 
     return 'rotateZ(' + rotate + 'deg)';
   };
