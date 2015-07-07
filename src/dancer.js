@@ -21,8 +21,8 @@ var Dancer = function(top, left, timeBetweenSteps){
   };
 
   this.getMoveString = function(){
-    var moveTop = Math.floor(Math.random() * 30) - 15;
-    var moveLeft = Math.floor(Math.random() * 30) - 15;
+    var moveTop = Math.floor(Math.random() * 70) - 35;
+    var moveLeft = Math.floor(Math.random() * 70) - 35;
     var top = this.$node.css('top');
     top = +top.slice(0, top.length - 2) + moveTop;
     var left = this.$node.css('left');
