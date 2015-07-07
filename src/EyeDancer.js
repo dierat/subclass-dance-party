@@ -3,7 +3,6 @@ var EyeDancer = function(top, left, delay){
 
   var width = Math.floor(Math.random() * 100) + 20;
   var height = width * 0.68;
-
   var styleSettings = {
     'width': width,
     'height': height,
@@ -12,22 +11,22 @@ var EyeDancer = function(top, left, delay){
     'background-size': '100%'
   };
   this.$node.css(styleSettings);
-
-  this.getRotateString = function(){
-    var rotate = Math.floor((Math.random() * 200) - 100);
-
-    return 'rotateZ(' + rotate + 'deg)';
-  };
-
-  this.oldStep = this.step;
-  this.step = function(){
-    var rotateString = this.getRotateString();
-
-    this.oldStep(rotateString);
-
-  };
-
 };
+
 
 EyeDancer.prototype = Object.create(Dancer.prototype);
 EyeDancer.prototype.constructor = EyeDancer;
+
+
+EyeDancer.prototype.getRotateString = function(){
+  var rotate = Math.floor((Math.random() * 200) - 100);
+
+  return 'rotateZ(' + rotate + 'deg)';
+};
+
+
+EyeDancer.prototype.step = function(){
+  var rotateString = this.getRotateString();
+
+  Dancer.prototype.step.call(this, rotateString);
+};
