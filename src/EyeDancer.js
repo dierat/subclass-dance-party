@@ -8,7 +8,7 @@ var EyeDancer = function(top, left, delay){
     'width': width,
     'height': height,
     'border': 'none',
-    'background-image': "url('eye.png')",
+    'background-image': "url('eye_edited.png')",
     'background-size': '100%'
   };
   this.$node.css(styleSettings);
