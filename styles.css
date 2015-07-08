@@ -30,3 +30,6 @@ body, a:link, a:visited, a:active{
   position:absolute;
   transition: top, left .2s;
 }
+.dancer:hover {
+  background-image: url('eye_closed.png') !important;
+}
